@@ -1,0 +1,20 @@
+# Rust
+/target/
+Cargo.lock
+
+# qverc
+.qverc/
+resources/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*.vsix
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,17 @@
+[gatekeeper]
+tier1 = ["cargo check", "cargo clippy -- -D warnings"]
+tier2 = ["cargo test"]
+tier3 = ["cargo test --release"]
+
+[workspace]
+ignore = [
+    ".qverc/",
+    ".git/",
+    "target/",
+    "Cargo.lock",
+    "*.log",
+    "node_modules/",
+    "vscode-qverc/out/",
+    "vscode-qverc/node_modules/",
+    "*.vsix"
+]

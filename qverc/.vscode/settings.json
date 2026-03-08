@@ -1,0 +1,10 @@
+{
+    "git.decorations.enabled": false,
+    "git.openRepositoryInParentFolders": "never",
+    "terminal.integrated.env.linux": {
+      "GIT_CEILING_DIRECTORIES": "${workspaceFolder}"
+    },
+    "terminal.integrated.env.osx": {
+      "GIT_CEILING_DIRECTORIES": "${workspaceFolder}"
+    }
+}

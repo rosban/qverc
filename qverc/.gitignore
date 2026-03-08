@@ -1,0 +1,28 @@
+# Rust
+/target/
+Cargo.lock
+
+# qverc internal state
+/.qverc/
+resources/
+
+# VS Code extension
+/vscode-qverc/node_modules/
+/vscode-qverc/out/
+*.vsix
+
+# Cursor IDE
+/.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+
+# Logs
+*.log
+
+

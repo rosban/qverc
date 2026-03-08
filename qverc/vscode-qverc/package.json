@@ -1,0 +1,174 @@
+{
+  "name": "vscode-qverc",
+  "displayName": "qverc",
+  "description": "Quantum Version Control for AI workflows - VS Code integration",
+  "version": "0.1.0",
+  "publisher": "qverc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qverc/qverc"
+  },
+  "homepage": "https://github.com/qverc/qverc/tree/main/vscode-qverc",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
+  "keywords": [
+    "version control",
+    "vcs",
+    "qverc",
+    "ai",
+    "dag"
+  ],
+  "activationEvents": [
+    "workspaceContains:.qverc",
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "qverc.init",
+        "title": "qverc: Initialize Repository"
+      },
+      {
+        "command": "qverc.sync",
+        "title": "qverc: Sync"
+      },
+      {
+        "command": "qverc.status",
+        "title": "qverc: Show Status"
+      },
+      {
+        "command": "qverc.log",
+        "title": "qverc: Show Log"
+      },
+      {
+        "command": "qverc.edit",
+        "title": "qverc: Edit (Set Intent)"
+      },
+      {
+        "command": "qverc.checkout",
+        "title": "qverc: Checkout Node"
+      },
+      {
+        "command": "qverc.refresh",
+        "title": "qverc: Refresh Status"
+      },
+      {
+        "command": "qverc.showGraph",
+        "title": "qverc: Show Graph"
+      },
+      {
+        "command": "qverc.showGraphInBrowser",
+        "title": "qverc: Show Graph in Browser"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "qverc.init",
+          "when": "!qverc.initialized"
+        },
+        {
+          "command": "qverc.sync",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.status",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.log",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.edit",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.checkout",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.refresh",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.showGraph",
+          "when": "qverc.initialized"
+        },
+        {
+          "command": "qverc.showGraphInBrowser",
+          "when": "qverc.initialized"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "qverc",
+      "properties": {
+        "qverc.executablePath": {
+          "type": "string",
+          "default": "qverc",
+          "description": "Path to qverc executable"
+        },
+        "qverc.autoRefresh": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically refresh status when files change"
+        },
+        "qverc.refreshInterval": {
+          "type": "number",
+          "default": 5000,
+          "description": "Interval in milliseconds for auto-refresh (minimum 1000)"
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "qverc.addedForeground",
+        "description": "Color for added files",
+        "defaults": {
+          "dark": "#89d185",
+          "light": "#587c0c",
+          "highContrast": "#89d185"
+        }
+      },
+      {
+        "id": "qverc.modifiedForeground",
+        "description": "Color for modified files",
+        "defaults": {
+          "dark": "#e2c08d",
+          "light": "#895503",
+          "highContrast": "#e2c08d"
+        }
+      },
+      {
+        "id": "qverc.deletedForeground",
+        "description": "Color for deleted files",
+        "defaults": {
+          "dark": "#c74e39",
+          "light": "#ad0707",
+          "highContrast": "#c74e39"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0"
+  }
+}

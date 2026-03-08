@@ -1,0 +1,50 @@
+[package]
+name = "qverc"
+version = "0.1.0"
+edition = "2021"
+description = "Quantum Version Control - A DAG-based VCS for AI agent workflows"
+license = "MIT"
+repository = "https://github.com/qverc/qverc"
+keywords = ["vcs", "version-control", "dag", "ai"]
+categories = ["development-tools"]
+
+[dependencies]
+# CLI
+clap = { version = "4.4", features = ["derive"] }
+
+# Database
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# Hashing
+blake3 = "1.5"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# File system
+walkdir = "2.4"
+ignore = "0.4"
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Terminal output
+colored = "2.1"
+
+[[bin]]
+name = "qverc"
+path = "src/main.rs"
+
+[lib]
+name = "qverc"
+path = "src/lib.rs"
+
+[dev-dependencies]
+tempfile = "3.14"
+
